@@ -96,9 +96,7 @@ TreeNode * minimum(TreeNode * x){
     TreeNode *auxNode = x;
 
     while(auxNode->left != NULL)
-    {
         auxNode = auxNode->left;
-    }
     
     return auxNode;
 }
