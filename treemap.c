@@ -212,12 +212,17 @@ Pair * nextTreeMap(TreeMap * tree) {
         return tree->current->pair;
     }
 
-    //TreeNode *nextAux = tree->current->parent;
-    //int auxBusq;
+    TreeNode *prevAux = tree->current->parent;
+    int auxBusq;
 
-    return NULL;
-    //while(tree->lower_than(nextAux->pair->key, tree->current->pair->key))
-    //{
+    while(1)
+    {
+        auxBusq = tree->lower_than(tree->current->pair->key, prevAux->pair->key);
+        if(auxBusq) return prevAux->pair;
+        if(prevAux == tree->root) return NULL;
+        prevAux = prevAux->parent;
+    }
+
     //    nextAux = nextAux->parent;
     //}
 
