@@ -58,11 +58,8 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
     while(1)
     {
-        if(is_equal(tree, key, auxNode->pair->key))
-        {
-            return; // clave repetida
-        }
-     
+        if(is_equal(tree, key, auxNode->pair->key)) return;
+
         searchComp = tree->lower_than(key,auxNode->pair->key);
      
         if(searchComp)
@@ -88,17 +85,22 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
             }
             auxNode = auxNode->right;
             tree->current = auxNode;
-            //auxNode = auxNode->right;
-            //tree->current = auxNode;
         }
-
     }
-
 }
 
 TreeNode * minimum(TreeNode * x){
 
-    return NULL;
+    if(x->left == NULL) return x;
+
+    TreeNode *auxNode = x;
+
+    while(auxNode->left != NULL)
+    {
+        auxNode = auxNode->left;
+    }
+    
+    return auxNode;
 }
 
 
