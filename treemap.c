@@ -85,6 +85,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
     {
         if(is_equal(tree, key, auxNode->pair->key))
         {
+            tree->current = auxNode;
             return auxNode->pair;
         }
      
@@ -93,8 +94,10 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
         if(search)
         {
             auxNode = auxNode->left;
+            tree->current = auxNode;
         } else {
             auxNode = auxNode->right;
+            tree->current = auxNode;
         }
 
         if(auxNode == NULL) return NULL;
