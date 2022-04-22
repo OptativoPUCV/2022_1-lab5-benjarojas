@@ -228,3 +228,8 @@ Fri Apr 22 17:28:12 HSP 2022:
  tests:  23|0
    [OK] next retorna nodo 6980
 85761cd
+Fri Apr 22 17:29:27 HSP 2022: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+5569ba9

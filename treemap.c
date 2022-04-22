@@ -215,7 +215,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     TreeNode *nextAux = tree->current->parent;
     int auxBusq;
 
-    while(1)
+    while(!tree->lower_than(tree->current, nextAux))
     {
         auxBusq = tree->lower_than(tree->current, nextAux);
         if(auxBusq)
