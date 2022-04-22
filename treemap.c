@@ -220,7 +220,7 @@ Pair * nextTreeMap(TreeMap * tree) {
         auxBusq = tree->lower_than(tree->current, nextAux);
         if(auxBusq)
         {
-            return nextAux;
+            return nextAux->pair;
         }
     }
     return NULL;
