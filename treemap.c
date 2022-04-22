@@ -195,6 +195,8 @@ Pair * firstTreeMap(TreeMap * tree) {
     while(auxNode->left != NULL)
         auxNode = auxNode->left;
     
+    tree->current = auxNode;
+
     return auxNode->pair;
 }
 
