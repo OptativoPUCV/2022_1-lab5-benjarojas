@@ -218,8 +218,8 @@ Pair * nextTreeMap(TreeMap * tree) {
     while(1)
     {
         auxBusq = tree->lower_than(tree->current->pair->key, prevAux->pair->key);
-        if(auxBusq) return prevAux->pair;
         if(prevAux == tree->root) return NULL;
+        if(auxBusq) return prevAux->pair;
         prevAux = prevAux->parent;
     }
 
