@@ -213,7 +213,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     }
 
     TreeNode *nextAux = tree->current->parent;
-    TreeNode *auxBusq;
+    int auxBusq;
 
     while(1)
     {
