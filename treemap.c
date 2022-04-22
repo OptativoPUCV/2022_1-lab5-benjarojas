@@ -204,5 +204,13 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
+
+    TreeNode *nextAux;
+
+    nextAux = tree->current;
+
+    if(nextAux->right != NULL)
+        return nextAux->right->pair;
+
     return NULL;
 }
