@@ -52,8 +52,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
     TreeNode *auxNode= tree->root;
     tree->current = tree->root;
 
-    if(is_equal(tree, key, auxNode->pair->key))
-        return auxNode->pair;
+    if(is_equal(tree, key, auxNode->pair->key)) return;
 
     int searchComp;
 
