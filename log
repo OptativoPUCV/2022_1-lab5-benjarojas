@@ -247,3 +247,9 @@ treemap.c:215:15: error: unused variable 'nextAux' [-Werror=unused-variable]
 cc1.exe: all warnings being treated as errors
 Compilation failed
 b676f07
+Fri Apr 22 17:30:32 HSP 2022: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  22|2
+total_score: 50/70
+a7d4faa

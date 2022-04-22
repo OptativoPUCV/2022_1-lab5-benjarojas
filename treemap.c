@@ -212,8 +212,8 @@ Pair * nextTreeMap(TreeMap * tree) {
         return tree->current->pair;
     }
 
-    TreeNode *nextAux = tree->current->parent;
-    int auxBusq;
+    //TreeNode *nextAux = tree->current->parent;
+    //int auxBusq;
 
     return NULL;
     //while(tree->lower_than(nextAux->pair->key, tree->current->pair->key))
