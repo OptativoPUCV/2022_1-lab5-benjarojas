@@ -209,6 +209,7 @@ Pair * nextTreeMap(TreeMap * tree) {
     {
         nextAux = minimum(tree->current->right);
         tree->current = nextAux;
+        return nextAux->pair;
     }
-    return nextAux->pair;
+    return NULL;
 }
