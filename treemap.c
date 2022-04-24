@@ -204,11 +204,11 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    Pair *nextAux = NULL;
+    TreeNode *nextAux = NULL;
     if(tree->current->right != NULL)
     {
         nextAux = minimum(tree->current->right);
         tree->current = nextAux;
     }
-    return nextAux;
+    return nextAux->pair;
 }
