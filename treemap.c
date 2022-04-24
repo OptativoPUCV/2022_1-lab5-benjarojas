@@ -204,34 +204,11 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-
-    // Si el nodo a la derecha no es nulo
+    Pair *nextAux = NULL;
     if(tree->current->right != NULL)
     {
-        tree->current = minimum(tree->current->right);
-        return tree->current->pair;
+        nextAux = minimum(tree->current->right);
+        tree->current = nextAux;
     }
-
-    TreeNode *prevAux = tree->current->parent;
-    int auxBusq;
-
-    if(tree->current->parent == NULL)
-    {
-        return NULL;
-    }
-
-    while(1)
-    {
-        auxBusq = tree->lower_than(tree->current->pair->key, prevAux->pair->key);
-        if((prevAux == tree->root) && (tree->lower_than(tree->root->pair->key, prevAux->pair->key))) return NULL;
-        if(auxBusq) return prevAux->pair;
-        prevAux = prevAux->parent;
-    }
-    return NULL;
-    //    nextAux = nextAux->parent;
-    //}
-
-    // tree->current = nextAux;
-
-    //return nextAux->pair;
+    return nextAux;
 }
