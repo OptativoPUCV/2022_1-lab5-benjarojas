@@ -212,15 +212,14 @@ Pair * nextTreeMap(TreeMap * tree) {
     if(tree->current->right)
     {
         nextAux = minimum(tree->current->right);
-        tree->current = nextAux;
     } else {
         nextAux = tree->current->parent;
         while((nextAux != NULL) && (tree->lower_than(nextAux->pair->key, tree->current->pair->key)))
         {
             nextAux = nextAux->parent;
-            tree->current = nextAux;
         }
     }
+    tree->current = nextAux;
     if(nextAux)
         return nextAux->pair;
     return NULL;
