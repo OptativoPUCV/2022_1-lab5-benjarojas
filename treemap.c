@@ -215,9 +215,11 @@ Pair * nextTreeMap(TreeMap * tree) {
         tree->current = nextAux;
     } else {
         nextAux = tree->current->parent;
-        while(nextAux != NULL && tree->lower_than(nextAux->pair->key, tree->current->pair->key))
+        while((nextAux != NULL) && (tree->lower_than(nextAux->pair->key, tree->current->pair->key)))
+        {
             nextAux = nextAux->parent;
             tree->current = nextAux;
+        }
     }
     if(nextAux)
         return nextAux->pair;
