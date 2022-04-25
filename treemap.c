@@ -204,12 +204,22 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    TreeNode *nextAux = NULL;
-    if(tree->current->right != NULL)
+
+    if(tree == NULL || tree->current == NULL)
+        return NULL;
+
+    TreeNode *nextAux;
+    if(tree->current->right)
     {
         nextAux = minimum(tree->current->right);
         tree->current = nextAux;
-        return nextAux->pair;
+    } else {
+        nextAux = tree->current->parent;
+        while(nextAux != NULL && tree->lower_than(nextAux->pair->key, tree->current->pair->key))
+            nextAux = nextAux->parent;
+            tree->current = nextAux;
     }
+    if(nextAux)
+        return nextAux->pair;
     return NULL;
 }
